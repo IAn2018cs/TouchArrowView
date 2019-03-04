@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#302f2f"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/bt_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="后退" />
+
+    <Button
+        android:id="@+id/bt_go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="前进"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <cn.ian2018.toucharrowview.TouchArrowView
+        android:id="@+id/touch_arrow"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:path_color="#dfe2ea"
+        app:point_color="#3151b9"
+        app:line_min_length="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_back" />
+
+</android.support.constraint.ConstraintLayout>
