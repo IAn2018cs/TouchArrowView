@@ -24,10 +24,14 @@
         android:id="@+id/touch_arrow"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:path_color="#dfe2ea"
-        app:point_color="#3151b9"
-        app:line_min_length="50dp"
+        app:arrow_space="10dp"
+        app:dot_radius="4.2dp"
+        app:arrow_height="6dp"
+        app:arrow_bottom_half_length="5.5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bt_back" />
+        app:layout_constraintTop_toBottomOf="@id/bt_back"
+        app:line_min_length="40dp"
+        app:path_color="#FFFFFF"
+        app:point_color="#34E1F1" />
 
 </android.support.constraint.ConstraintLayout>
