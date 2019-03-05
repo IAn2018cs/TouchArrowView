@@ -45,12 +45,15 @@ public class TouchArrowView extends View {
     // 线段的最小长度
     private float minLengthOfLine = 100;
 
+    // 圆点半径
+    private float dotRadius = 8;
+
     // 箭头的高度
-    private double arrowHeight = 26;
+    private float arrowHeight = 26;
     // 箭头底边一半
-    private double arrowBottomHalfLength = 12;
+    private float arrowBottomHalfLength = 12;
     // 箭头之间的间距
-    private double arrowSpace = 28;
+    private float arrowSpace = 28;
 
     // 是否正在绘制  防止这时候点击按钮
     private boolean isDrawing = false;
@@ -84,6 +87,7 @@ public class TouchArrowView extends View {
         if (attrs != null) {
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TouchArrowView);
             minLengthOfLine = typedArray.getDimension(R.styleable.TouchArrowView_line_min_length, 100);
+            dotRadius = typedArray.getDimension(R.styleable.TouchArrowView_dot_radius, 8);
             arrowHeight = typedArray.getDimension(R.styleable.TouchArrowView_arrow_height, 26);
             arrowBottomHalfLength = typedArray.getDimension(R.styleable.TouchArrowView_arrow_bottom_half_length, 12);
             arrowSpace = typedArray.getDimension(R.styleable.TouchArrowView_arrow_space, 28);
@@ -105,15 +109,15 @@ public class TouchArrowView extends View {
         this.minLengthOfLine = minLengthOfLine;
     }
 
-    public void setArrowHeight(double arrowHeight) {
+    public void setArrowHeight(float arrowHeight) {
         this.arrowHeight = arrowHeight;
     }
 
-    public void setArrowBottomHalfLength(double arrowBottomHalfLength) {
+    public void setArrowBottomHalfLength(float arrowBottomHalfLength) {
         this.arrowBottomHalfLength = arrowBottomHalfLength;
     }
 
-    public void setArrowSpace(double arrowSpace) {
+    public void setArrowSpace(float arrowSpace) {
         this.arrowSpace = arrowSpace;
     }
 
@@ -239,7 +243,7 @@ public class TouchArrowView extends View {
                     }
                     // 最后一个点不画出
                     if (i != points.size() - 1) {
-                        canvas.drawCircle(points.get(i).x, points.get(i).y, 8, mPointPaint);
+                        canvas.drawCircle(points.get(i).x, points.get(i).y, dotRadius, mPointPaint);
                     }
                 }
             }
@@ -251,7 +255,7 @@ public class TouchArrowView extends View {
                 if (i + 1 < mPoints.size()) {
                     drawAL(mPoints.get(i).x, mPoints.get(i).y, mPoints.get(i + 1).x, mPoints.get(i + 1).y, canvas, mPaint);
                 }
-                canvas.drawCircle(mPoints.get(i).x, mPoints.get(i).y, 8, mPointPaint);
+                canvas.drawCircle(mPoints.get(i).x, mPoints.get(i).y, dotRadius, mPointPaint);
             }
         }
     }

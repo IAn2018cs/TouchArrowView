@@ -10,6 +10,7 @@
 
     <declare-styleable name="TouchArrowView">
         <attr name="line_min_length" format="dimension"/>
+        <attr name="dot_radius" format="dimension"/>
         <attr name="arrow_height" format="dimension"/>
         <attr name="arrow_bottom_half_length" format="dimension"/>
         <attr name="arrow_space" format="dimension"/>
