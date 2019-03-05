@@ -12,6 +12,7 @@
         <attr name="line_min_length" format="dimension"/>
         <attr name="arrow_height" format="dimension"/>
         <attr name="arrow_bottom_half_length" format="dimension"/>
+        <attr name="arrow_space" format="dimension"/>
         <attr name="path_color" format="color"/>
         <attr name="point_color" format="color"/>
     </declare-styleable>

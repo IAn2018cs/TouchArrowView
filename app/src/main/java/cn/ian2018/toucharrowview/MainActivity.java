@@ -1,7 +1,8 @@
 package cn.ian2018.toucharrowview;
 
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.PointF;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -25,12 +26,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         touchArrowView = findViewById(R.id.touch_arrow);
+        touchArrowView.setOpenTouch(true);
         touchArrowView.setOnCanGoBackGoForwardListener(new TouchArrowView.OnArrowViewEventListener() {
             @Override
-            public void onTouchUp(List<PathPoint> pointList) {
-
+            public void onTouchUp(List<List<PointF>> pointList) {
             }
-
             @Override
             public void canGoBackGoForward(boolean canGoBack, boolean canGoForward) {
                 bt_back.setEnabled(canGoBack);
